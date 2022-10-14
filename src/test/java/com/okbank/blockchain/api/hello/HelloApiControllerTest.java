@@ -1,4 +1,4 @@
-package com.okbank.blockchain.web;
+package com.okbank.blockchain.api.hello;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -14,7 +14,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @AutoConfigureMockMvc
 @SpringBootTest
-public class HelloControllerTest {
+public class HelloApiControllerTest {
 
     @Autowired
     private MockMvc mvc; // 웹 API를 테스트할 때 사용

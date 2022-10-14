@@ -2,10 +2,10 @@ package com.okbank.blockchain.service.posts;
 
 import com.okbank.blockchain.domain.posts.Posts;
 import com.okbank.blockchain.domain.posts.PostsRepository;
-import com.okbank.blockchain.web.dto.PostsListResponseDto;
-import com.okbank.blockchain.web.dto.PostsUpdateRequestDto;
-import com.okbank.blockchain.web.dto.PostsResponseDto;
-import com.okbank.blockchain.web.dto.PostsSaveRequestDto;
+import com.okbank.blockchain.api.posts.dto.PostsListResponseDto;
+import com.okbank.blockchain.api.posts.dto.PostsUpdateRequestDto;
+import com.okbank.blockchain.api.posts.dto.PostsResponseDto;
+import com.okbank.blockchain.api.posts.dto.PostsSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,7 +21,7 @@ public class PostsService {
 
     @Transactional
     public Long save(PostsSaveRequestDto requestDto) {
-        return postsRepository.save((requestDto.toEntity())).getId();
+        return postsRepository.save((requestDto.toEntity())).getPostUid();
     }
 
     @Transactional

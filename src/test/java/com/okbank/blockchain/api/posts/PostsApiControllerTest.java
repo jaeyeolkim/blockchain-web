@@ -1,10 +1,10 @@
-package com.okbank.blockchain.web;
+package com.okbank.blockchain.api.posts;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.okbank.blockchain.api.posts.dto.PostsSaveRequestDto;
+import com.okbank.blockchain.api.posts.dto.PostsUpdateRequestDto;
 import com.okbank.blockchain.domain.posts.Posts;
 import com.okbank.blockchain.domain.posts.PostsRepository;
-import com.okbank.blockchain.web.dto.PostsSaveRequestDto;
-import com.okbank.blockchain.web.dto.PostsUpdateRequestDto;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -22,6 +22,7 @@ import org.springframework.web.context.WebApplicationContext;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -72,8 +73,8 @@ public class PostsApiControllerTest {
 
         // when
         mvc.perform(post(url)
-                .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .content(new ObjectMapper().writeValueAsString(requestDto)))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .content(new ObjectMapper().writeValueAsString(requestDto)))
                 .andExpect(status().isOk());
 
         // then
@@ -92,7 +93,7 @@ public class PostsApiControllerTest {
                 .author("author")
                 .build());
 
-        Long updateId = savedPosts.getId();
+        Long updateId = savedPosts.getPostUid();
         String expectedTitle = "title2";
         String expectedContent = "content2";
 
@@ -107,8 +108,8 @@ public class PostsApiControllerTest {
 
         // when
         mvc.perform(put(url)
-                .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .content(new ObjectMapper().writeValueAsString(requestDto)))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .content(new ObjectMapper().writeValueAsString(requestDto)))
                 .andExpect(status().isOk());
 
         List<Posts> all = postsRepository.findAll();

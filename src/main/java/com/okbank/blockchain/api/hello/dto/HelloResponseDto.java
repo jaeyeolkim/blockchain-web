@@ -1,4 +1,4 @@
-package com.okbank.blockchain.web.dto;
+package com.okbank.blockchain.api.hello.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

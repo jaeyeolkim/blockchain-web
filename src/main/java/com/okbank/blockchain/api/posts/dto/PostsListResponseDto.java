@@ -1,4 +1,4 @@
-package com.okbank.blockchain.web.dto;
+package com.okbank.blockchain.api.posts.dto;
 
 import com.okbank.blockchain.domain.posts.Posts;
 import lombok.Getter;
@@ -13,7 +13,7 @@ public class PostsListResponseDto {
     private LocalDateTime modifiedDate;
 
     public PostsListResponseDto(Posts entity) {
-        this.id = entity.getId();
+        this.id = entity.getPostUid();
         this.title = entity.getTitle();
         this.author = entity.getAuthor();
         this.modifiedDate = entity.getModifiedDate();

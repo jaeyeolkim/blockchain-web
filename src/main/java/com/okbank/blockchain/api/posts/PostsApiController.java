@@ -1,9 +1,9 @@
-package com.okbank.blockchain.web;
+package com.okbank.blockchain.api.posts;
 
+import com.okbank.blockchain.api.posts.dto.PostsSaveRequestDto;
+import com.okbank.blockchain.api.posts.dto.PostsUpdateRequestDto;
 import com.okbank.blockchain.service.posts.PostsService;
-import com.okbank.blockchain.web.dto.PostsUpdateRequestDto;
-import com.okbank.blockchain.web.dto.PostsResponseDto;
-import com.okbank.blockchain.web.dto.PostsSaveRequestDto;
+import com.okbank.blockchain.api.posts.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

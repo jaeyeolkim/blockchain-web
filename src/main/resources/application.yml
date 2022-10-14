@@ -18,7 +18,7 @@ spring:
         storage_engine: innodb
         format_sql: true
         default_batch_fetch_size: 1000
-    show-sql: true
+    show-sql: false
     open-in-view: false
   servlet:
     multipart:
@@ -29,3 +29,10 @@ spring:
     allow-bean-definition-overriding: true
 #  session:
 #    store-type: jdbc
+
+# jpa query, parameter ?? - ?? ? false ?? ??
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true
+      multiline: true

@@ -18,7 +18,7 @@ public class Posts extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // spring boot2.0에서는 IDENTITY 선언해야 auto_increment 가 된다
-    private Long id;
+    private Long postUid;
 
     @Column(length = 500, nullable = false) // Column 은 굳이 선언하지 않아도 되고, 옵션이 필요한 경우에만 선언 varchar(255)가 기본값
     private String title;

@@ -1,11 +1,12 @@
-package com.okbank.blockchain.web.dto;
+package com.okbank.blockchain.api.hello.dto;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class HelloResponseDtoTest {
+class HelloResponseDtoTest {
 
     @Test
     @DisplayName("롬복_테스트")

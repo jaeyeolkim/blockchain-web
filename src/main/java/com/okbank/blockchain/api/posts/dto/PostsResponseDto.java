@@ -1,9 +1,11 @@
-package com.okbank.blockchain.web.dto;
+package com.okbank.blockchain.api.posts.dto;
 
 import com.okbank.blockchain.domain.posts.Posts;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
+@NoArgsConstructor
 public class PostsResponseDto {
 
     private Long id;
@@ -12,7 +14,7 @@ public class PostsResponseDto {
     private String author;
 
     public PostsResponseDto(Posts entity) {
-        this.id = entity.getId();
+        this.id = entity.getPostUid();
         this.title = entity.getTitle();
         this.content = entity.getContent();
         this.author = entity.getAuthor();
