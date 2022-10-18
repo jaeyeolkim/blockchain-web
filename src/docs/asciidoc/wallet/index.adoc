@@ -1,0 +1,5 @@
+:adocbase: {snippets}/../../src/docs/asciidoc
+
+== WALLET
+
+include::{adocbase}/wallet/wallet.adoc[]

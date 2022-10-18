@@ -1,6 +1,7 @@
 package com.okbank.blockchain.domain.wallet;
 
 import com.okbank.blockchain.api.wallet.dto.WalletListResponseDto;
+import com.okbank.blockchain.api.wallet.dto.WalletResponseDto;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 
@@ -28,5 +29,17 @@ public class WalletRepositoryImpl implements WalletRepositoryCustom {
                 .join(user).on(wallet.owner.userUid.eq(user.userUid))
                 .orderBy(wallet.walletUid.desc())
                 .fetch();
+    }
+
+    @Override
+    public WalletResponseDto findWallet(String walletUid) {
+        return queryFactory
+                .select(fields(WalletResponseDto.class,
+                        wallet.walletUid,
+                        wallet.name.as("walletName"),
+                        wallet.modifiedDate
+                ))
+                .from(wallet)
+                .fetchOne();
     }
 }

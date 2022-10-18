@@ -1,4 +1,4 @@
-package com.okbank.blockchain.config.auth;
+package com.okbank.blockchain.common.config.auth;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

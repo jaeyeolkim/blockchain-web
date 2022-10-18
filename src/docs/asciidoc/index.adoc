@@ -1,0 +1,29 @@
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectnums:
+:sectlinks:
+:adocbase: {snippets}/../../src/docs/asciidoc
+
+= OK BlockChain: Service API
+
+generated at {localdatetime}
+
+== 공통사항
+
+'''
+
+=== API Domain
+
+[cols=2*,options=header]
+|===
+|환경|Domain
+|개발|https://dev.okbank.com
+|운영|https://prd.okbank.com
+|===
+
+include::{adocbase}/common.adoc[]
+
+include::{adocbase}/wallet/index.adoc[]

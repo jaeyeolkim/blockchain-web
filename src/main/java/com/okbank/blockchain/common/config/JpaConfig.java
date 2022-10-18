@@ -1,4 +1,4 @@
-package com.okbank.blockchain.config;
+package com.okbank.blockchain.common.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.context.annotation.Bean;

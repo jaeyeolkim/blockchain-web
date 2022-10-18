@@ -1,4 +1,4 @@
-package com.okbank.blockchain.config.auth.dto;
+package com.okbank.blockchain.common.config.auth.dto;
 
 import com.okbank.blockchain.domain.user.User;
 import lombok.Getter;

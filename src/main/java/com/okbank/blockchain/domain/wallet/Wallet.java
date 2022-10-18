@@ -1,5 +1,6 @@
 package com.okbank.blockchain.domain.wallet;
 
+import com.okbank.blockchain.common.util.OkIdGenerator;
 import com.okbank.blockchain.domain.BaseTimeEntity;
 import com.okbank.blockchain.domain.user.User;
 import lombok.AccessLevel;
@@ -19,9 +20,14 @@ import javax.persistence.*;
 )
 public class Wallet extends BaseTimeEntity {
 
+    @PrePersist
+    void prePersist() {
+        this.walletUid = OkIdGenerator.generate();
+    }
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long walletUid;
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String walletUid;
 
     @Column(columnDefinition = "varchar(100) NOT NULL comment '지갑명'")
     private String name;

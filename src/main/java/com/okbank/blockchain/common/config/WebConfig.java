@@ -1,6 +1,6 @@
-package com.okbank.blockchain.config;
+package com.okbank.blockchain.common.config;
 
-import com.okbank.blockchain.config.auth.LoginUserArgumentResolver;
+import com.okbank.blockchain.common.config.auth.LoginUserArgumentResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;

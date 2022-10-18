@@ -1,6 +1,6 @@
-package com.okbank.blockchain.config.auth;
+package com.okbank.blockchain.common.config.auth;
 
-import com.okbank.blockchain.config.auth.dto.SessionUser;
+import com.okbank.blockchain.common.config.auth.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;

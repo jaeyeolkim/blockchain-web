@@ -1,0 +1,47 @@
+=== Common Response Field
+
+[cols=2*,options=header]
+|===
+|Key|Value
+|code|에러코드
+|message|에러 내용, 사용자에게 보여지면 안됨.
+|data (optional)|데이터 (데이터 or Page 응답일 때)
+|pageNum (optional)|데이터의 Page (Page 형식의 데이터 요청일 때)
+|pageSize (optional)|데이터의 PageSize (Page 형식의 데이터 요청일 때)
+|totalCount (optional)|전체 카운트 (Page 형식의 데이터 요청일때)
+|===
+
+=== Common Response Code
+
+`HttpStatus Code` 와 무관
+
+[cols=2*,options=header]
+|===
+|Code|Desc
+|0|OK, 에러없이 정상처리됨
+||
+|400|BAD REQUEST
+|401|UNAUTHORIZED
+|404|NOT FOUND RESOURCE
+|500|SERVER ERROR
+||
+|1001|지원하지 않는 인증 프로바이더
+|1101|ID 또는 비밀번호 오류
+|1102|존재하지 않는 계정
+||
+|1111|패스워드 강도 낮음
+|1112|마지막 패스워드와 같음
+|1113|존재하지 않는 EMAIL
+|1114|비밀번호 Token 만료
+||
+|9999|알수없는 에러
+|===
+
+=== 월렛 종류
+
+[cols=2,options=header]
+|===
+|월렛 종류 코드 (대문자)|설명
+|CD001|private
+|CD002|public
+|===

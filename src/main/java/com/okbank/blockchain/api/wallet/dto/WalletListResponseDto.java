@@ -8,13 +8,12 @@ import lombok.ToString;
 import java.time.LocalDateTime;
 
 @ToString
-@Getter
 @NoArgsConstructor
+@Getter
 public class WalletListResponseDto {
-    private Long walletUid;
+    private String walletUid;
     private String walletName;
     private String ownerName;
-
     private LocalDateTime modifiedDate;
 
     public WalletListResponseDto(Wallet wallet) {

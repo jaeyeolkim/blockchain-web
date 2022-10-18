@@ -1,0 +1,7 @@
+=== 월렛
+
+==== 월렛 목록 조회
+
+- https://ticket-link[ticket-01,window="_blank"]
+
+include::{snippets}/wallet-api-controller-test/find-wallets-rest-doc/response-body.adoc[]

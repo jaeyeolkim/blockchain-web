@@ -1,4 +1,4 @@
-package com.okbank.blockchain.config.auth;
+package com.okbank.blockchain.common.config.auth;
 
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;

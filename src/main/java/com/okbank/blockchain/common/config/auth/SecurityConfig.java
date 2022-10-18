@@ -1,4 +1,4 @@
-package com.okbank.blockchain.config.auth;
+package com.okbank.blockchain.common.config.auth;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
