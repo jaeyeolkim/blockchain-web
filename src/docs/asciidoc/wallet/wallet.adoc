@@ -4,4 +4,8 @@
 
 - https://ticket-link[ticket-01,window="_blank"]
 
+include::{snippets}/wallet-api-controller-test/find-wallets-rest-doc/http-request.adoc[]
+include::{snippets}/wallet-api-controller-test/find-wallets-rest-doc/request-headers.adoc[]
+include::{snippets}/wallet-api-controller-test/find-wallets-rest-doc/request-parameters.adoc[]
 include::{snippets}/wallet-api-controller-test/find-wallets-rest-doc/response-body.adoc[]
+include::{snippets}/wallet-api-controller-test/find-wallets-rest-doc/response-fields.adoc[]
