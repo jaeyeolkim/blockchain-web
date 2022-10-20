@@ -1,6 +1,7 @@
 package com.okbank.blockchain.common.controller;
 
 import com.okbank.blockchain.common.payload.CommonResponse;
+import com.okbank.blockchain.common.payload.ErrorResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -36,9 +37,8 @@ public class GlobalExceptionController {
     @ExceptionHandler({BindException.class})
     public ResponseEntity<CommonResponse> handleBadRequestException(final BindException ex) {
         log.error(ex.toString());
-        return ResponseEntity.badRequest().body(CommonResponse.builder()
-                .responseCode(BAD_REQUEST)
-                .build()
+        return ResponseEntity.badRequest().body(
+                ErrorResponse.of(BAD_REQUEST, ex.getBindingResult())
         );
     }
 

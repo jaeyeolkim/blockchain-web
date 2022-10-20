@@ -18,10 +18,10 @@
   - ~~ResponseEntity 구조~~
   - ~~Querydsl~~
   - ~~RestDocs~~
-- Request Validation
-  - @Valid
-- Exception
-  - @ControllerAdvice
+- ~~Request Validation~~
+  - ~~@Valid~~
+- ~~Exception~~
+  - ~~@ControllerAdvice~~
 - CRUD 샘플 추가
   - Querydsl
   - RestDocs

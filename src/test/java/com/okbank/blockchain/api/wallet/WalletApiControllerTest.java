@@ -22,7 +22,9 @@ import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 class WalletApiControllerTest extends ApiAbstractTest {
@@ -91,6 +93,26 @@ class WalletApiControllerTest extends ApiAbstractTest {
                                 )
                         )
                 );
+    }
+
+    @Test
+    @DisplayName("월렛 목록 페이징 조회 Exception")
+    void findWalletsException() throws Exception {
+        String userName = "kim";
+
+        this.mockMvc.perform(
+                get(API_URI_PREFIX + "/wallets")
+                        .queryParam("pageNum", "1")
+                        .queryParam("pageSize", "10")
+                        .queryParam("fromDate", "")
+                        .queryParam("toDate", LocalDateUtil.nowPlusDaysOfPattern(1L))
+                        .queryParam("ownerName", userName)
+        )
+                .andDo(print())
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("400"))
+                .andExpect(jsonPath("$.validation[0].field").value("fromDate"))
+                .andExpect(jsonPath("$.validation[0].message").value("조회 시작일은 필수입니다."));
     }
 
     @Test

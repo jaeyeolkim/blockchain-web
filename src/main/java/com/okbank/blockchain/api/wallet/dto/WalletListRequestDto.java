@@ -17,7 +17,7 @@ import java.time.LocalDate;
 @Getter @Setter
 public class WalletListRequestDto extends PageRequest {
 
-    @NotNull
+    @NotNull(message = "조회 시작일은 필수입니다.")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate fromDate;
 
