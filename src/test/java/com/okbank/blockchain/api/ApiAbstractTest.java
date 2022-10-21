@@ -1,5 +1,6 @@
 package com.okbank.blockchain.api;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,10 @@ public abstract class ApiAbstractTest {
 
     @Autowired
     protected MockMvc mockMvc;
-    
+
+    @Autowired
+    protected ObjectMapper objectMapper;
+
     @BeforeAll
     void init() {
         // TODO MockUser 저장 등

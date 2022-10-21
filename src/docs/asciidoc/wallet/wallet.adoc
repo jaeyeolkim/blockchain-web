@@ -10,6 +10,7 @@ include::{snippets}/wallet-api-controller-test/find-my-wallets/path-parameters.a
 include::{snippets}/wallet-api-controller-test/find-my-wallets/response-body.adoc[]
 include::{snippets}/wallet-api-controller-test/find-my-wallets/response-fields.adoc[]
 
+
 '''
 ==== 월렛 목록 페이징 조회
 
@@ -20,3 +21,32 @@ include::{snippets}/wallet-api-controller-test/find-wallets/request-headers.adoc
 include::{snippets}/wallet-api-controller-test/find-wallets/request-parameters.adoc[]
 include::{snippets}/wallet-api-controller-test/find-wallets/response-body.adoc[]
 include::{snippets}/wallet-api-controller-test/find-wallets/response-fields.adoc[]
+
+
+'''
+==== 월렛 저장
+
+include::{snippets}/wallet-api-controller-test/save-wallet/http-request.adoc[]
+include::{snippets}/wallet-api-controller-test/save-wallet/request-headers.adoc[]
+include::{snippets}/wallet-api-controller-test/save-wallet/request-fields.adoc[]
+include::{snippets}/wallet-api-controller-test/save-wallet/response-body.adoc[]
+include::{snippets}/wallet-api-controller-test/save-wallet/response-fields.adoc[]
+
+'''
+==== 월렛 수정
+
+include::{snippets}/wallet-api-controller-test/update-wallet/http-request.adoc[]
+include::{snippets}/wallet-api-controller-test/update-wallet/request-headers.adoc[]
+include::{snippets}/wallet-api-controller-test/update-wallet/path-parameters.adoc[]
+include::{snippets}/wallet-api-controller-test/update-wallet/request-fields.adoc[]
+include::{snippets}/wallet-api-controller-test/update-wallet/response-body.adoc[]
+include::{snippets}/wallet-api-controller-test/update-wallet/response-fields.adoc[]
+
+'''
+==== 월렛 삭제
+
+include::{snippets}/wallet-api-controller-test/delete-wallet/http-request.adoc[]
+include::{snippets}/wallet-api-controller-test/delete-wallet/request-headers.adoc[]
+include::{snippets}/wallet-api-controller-test/delete-wallet/path-parameters.adoc[]
+include::{snippets}/wallet-api-controller-test/delete-wallet/response-body.adoc[]
+include::{snippets}/wallet-api-controller-test/delete-wallet/response-fields.adoc[]

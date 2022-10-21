@@ -1,6 +1,6 @@
 package com.okbank.blockchain.domain.posts;
 
-import com.okbank.blockchain.domain.BaseTimeEntity;
+import com.okbank.blockchain.domain.BaseEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Posts extends BaseTimeEntity {
+public class Posts extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // spring boot2.0에서는 IDENTITY 선언해야 auto_increment 가 된다

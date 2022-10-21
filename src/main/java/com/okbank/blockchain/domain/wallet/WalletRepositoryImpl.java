@@ -2,7 +2,6 @@ package com.okbank.blockchain.domain.wallet;
 
 import com.okbank.blockchain.api.wallet.dto.WalletListRequestDto;
 import com.okbank.blockchain.api.wallet.dto.WalletListResponseDto;
-import com.okbank.blockchain.api.wallet.dto.WalletResponseDto;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
@@ -67,21 +66,13 @@ public class WalletRepositoryImpl implements WalletRepositoryCustom {
                 .select(wallet.count())
                 .from(wallet)
                 .join(user).on(wallet.owner.userUid.eq(user.userUid))
+                .where(
+                        localDateTimeBetween(wallet.modifiedDate, requestDto.getFromDate(), requestDto.getToDate()),
+                        userNameEq(requestDto.getOwnerName())
+                )
                 .fetchOne();
 
         return new PageImpl<>(fetch, pageable, count == null ? 0 : count);
-    }
-
-    @Override
-    public WalletResponseDto findWallet(String walletUid) {
-        return queryFactory
-                .select(fields(WalletResponseDto.class,
-                        wallet.walletUid,
-                        wallet.name.as("walletName"),
-                        wallet.modifiedDate
-                ))
-                .from(wallet)
-                .fetchOne();
     }
 
     private BooleanExpression userUidEq(Long userUid) {

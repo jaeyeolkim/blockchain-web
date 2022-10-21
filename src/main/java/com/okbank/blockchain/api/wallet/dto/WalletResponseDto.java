@@ -9,7 +9,7 @@ import lombok.ToString;
 @Getter
 @NoArgsConstructor
 public class WalletResponseDto {
-    private String walletUid;
+    private Long walletUid;
     private String walletName;
     private String ownerName;
 

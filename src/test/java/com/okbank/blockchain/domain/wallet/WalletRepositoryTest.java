@@ -22,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 class WalletRepositoryTest {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private WalletRepository walletRepository;
@@ -34,26 +34,6 @@ class WalletRepositoryTest {
     void cleanup() {
         walletRepository.deleteAll();
         userRepository.deleteAll();
-    }
-
-    @Test
-    @DisplayName("월렛 입력 및 조회")
-    void findById() {
-        // given
-        String userName = "kim";
-        String walletName = "my wallet";
-        User owner = UserMock.buildUser(userName);
-        Wallet wallet = WalletMock.buildWallet(owner, walletName);
-
-        userRepository.save(owner);
-        Wallet savedWallet = walletRepository.save(wallet);
-
-        // when
-        Wallet findWallet = walletRepository.findById(savedWallet.getWalletUid())
-                .orElseThrow();
-
-        // then
-        assertThat(findWallet.getName()).isEqualTo(walletName);
     }
 
     @Test

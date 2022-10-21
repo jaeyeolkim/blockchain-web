@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 public class WalletListResponseDto {
-    private String walletUid;
+    private Long walletUid;
     private String walletName;
     private String ownerName;
     private LocalDateTime modifiedDate;

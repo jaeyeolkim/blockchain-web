@@ -1,6 +1,6 @@
 package com.okbank.blockchain.domain.user;
 
-import com.okbank.blockchain.domain.BaseTimeEntity;
+import com.okbank.blockchain.domain.BaseEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class User extends BaseTimeEntity {
+public class User extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
