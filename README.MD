@@ -10,6 +10,7 @@
 
 ---
 ## TODO
+### Framework
 - ~~기본 구성~~
   - ~~JPA~~
   - ~~AuditorAware~~
@@ -22,7 +23,16 @@
   - ~~@Valid~~
 - ~~Exception~~
   - ~~@ControllerAdvice~~
-- CRUD 샘플 추가
-  - Querydsl
-  - RestDocs
+- ~~CRUD 샘플 추가~~
+  - ~~Querydsl~~
+  - ~~RestDocs~~
   - ~~Paging~~
+
+### GitLab
+- 설치 및 확인
+
+### Jenkins
+- plugin 설치된 버전
+
+### Nexus
+- library 구성
